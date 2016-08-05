@@ -12,3 +12,5 @@ Download the [model](http://www.cs.toronto.edu/~frossard/vgg16/vgg16_weights.npz
     $ python testing.py
 
 
+## Training
+Download the [dataset](https://github.com/jaberg/skdata)
