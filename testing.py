@@ -12,29 +12,31 @@ from scipy.misc import imread, imresize
 from imagenet_classes import class_names
 import tensorflow as tf
 
-# construct the graph
-sess = tf.Session()
-input_maps = tf.placeholder(tf.float32, [None, 224, 224, 3])
-output, parameters = vgg16(input_maps)
-softmax = tf.nn.softmax(output)
-# Finds values and indices of the k largest entries
-k = 10
-values, indices = tf.nn.top_k(softmax, k)
+# build the graph
+with tf.Graph().as_default():
+    input_maps = tf.placeholder(tf.float32, [None, 224, 224, 3])
+    output, parameters = vgg16(input_maps)
+    softmax = tf.nn.softmax(output)
+    # Finds values and indices of the k largest entries
+    k = 10
+    values, indices = tf.nn.top_k(softmax, k)
 
-# load pre-trained model
+# read pre-trained model
 params = np.load('vgg16_weights.npz')
 keys = sorted(params.keys())
-for ind, key in enumerate(keys):
-    print ind, key, np.shape(params[key])
-    sess.run(parameters[ind].assign(params[key]))
 
-# read image
+# read sample image
 img = imread('weasel.png', mode='RGB')
 img = imresize(img, (224, 224))
 
-# testing
-[prob, ind] = sess.run([value, indices], feed_dict={input_maps: [img]})
-for i in range(k):
-    print class_names[ind[i]], prob[i]
-
-sess.close()
+# run the graph
+with tf.Session() as sess:
+    # load weights and biases
+    for ind, key in enumerate(keys):
+        print ind, key, np.shape(params[key])
+        sess.run(parameters[ind].assign(params[key]))
+    # testing on the sample image
+    [prob, ind] = sess.run([value, indices], feed_dict={input_maps: [img]})
+    for i in range(k):
+        print class_names[ind[i]], prob[i]
+    sess.close()
