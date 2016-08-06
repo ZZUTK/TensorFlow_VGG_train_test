@@ -6,8 +6,8 @@ Implementation of training and testing process of VGG16 and VGG19 in TensorFlow
 * Python 2.7.x 
 
 ## Easy Run Testing
-The testing code `testing.py` test on a image of [weasel](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/laska.png) using a [pre-traind VGG16 model](http://www.cs.toronto.edu/~frossard/vgg16/vgg16_weights.npz), which is provide by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/).
-Download the [model](http://www.cs.toronto.edu/~frossard/vgg16/vgg16_weights.npz) and run `testing.py`.
+The testing code `testing.py` test on a image of [weasel](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/laska.png) using a pre-traind VGG16 model provided by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/).
+Download the [model](https://www.dropbox.com/s/dode6mcjqpqhh4m/VGG16_modelParams.tensorflow?dl=0) and run `testing.py`.
 
     $ python testing.py
 
