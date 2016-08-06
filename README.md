@@ -4,11 +4,11 @@ Implementation of training and testing process of VGG16 and VGG19 in TensorFlow
 ## Pre-requisites
 * TensorFlow
 * Python 2.7.x 
-* Pre-trained VGG16 model parameters [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/dode6mcjqpqhh4m/VGG16_modelParams.tensorflow?dl=0)
+* Pre-trained VGG16 model parameters [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0)
 
 ## Easy Run Testing
-The testing code `testing.py` test on a image of [weasel](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/laska.png) using the pre-traind VGG16 model parameters provided by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/). We saved the model parameters as a tensorflow readable file [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/dode6mcjqpqhh4m/VGG16_modelParams.tensorflow?dl=0). 
-Download the [parameter file](https://www.dropbox.com/s/dode6mcjqpqhh4m/VGG16_modelParams.tensorflow?dl=0) and run `testing.py`.
+The testing code `testing.py` test on a image of [weasel](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/laska.png) using the pre-traind VGG16 model parameters provided by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/). We saved the model parameters as a tensorflow readable file [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0). 
+Download the [parameter file](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0) and run `testing.py`.
 
     $ python testing.py
 
