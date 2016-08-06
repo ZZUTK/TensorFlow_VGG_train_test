@@ -28,5 +28,3 @@ Probability: 4.79%
 
 ```
 
-## Training
-Download the [dataset](https://github.com/jaberg/skdata)
