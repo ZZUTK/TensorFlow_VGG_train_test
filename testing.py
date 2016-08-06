@@ -11,7 +11,7 @@ from VGG16_model import vgg16
 from scipy.misc import imread, imresize
 from imagenet_classes import class_names
 import tensorflow as tf
-import numpy as np
+
 
 # build the graph
 graph = tf.Graph()
@@ -22,10 +22,6 @@ with graph.as_default():
     # Finds values and indices of the k largest entries
     k = 3
     values, indices = tf.nn.top_k(softmax, k)
-
-# read pre-trained model
-params = np.load('vgg16_weights.npz')
-keys = sorted(params.keys())
 
 # read sample image
 img = imread('weasel.png', mode='RGB')
