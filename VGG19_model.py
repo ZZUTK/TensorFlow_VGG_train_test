@@ -8,7 +8,7 @@ import layerConstructor as lc
 import tensorflow as tf
 
 
-def vgg19(input_maps):
+def vgg19(input_maps, num_classes):
     parameters = []
 
     # assume the input image shape is 224 x 224 x 3
@@ -91,7 +91,7 @@ def vgg19(input_maps):
 
     # output6_2 shape 1 x 4096
 
-    output6_3, kernel6_3, bias6_3 = lc.fully_connection_layer('fc6_3', output6_2, 1000)
+    output6_3, kernel6_3, bias6_3 = lc.fully_connection_layer('fc6_3', output6_2, num_classes)
     parameters += [kernel6_3, bias6_3]
 
     # output6_3 shape 1 x 1000
