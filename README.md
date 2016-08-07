@@ -45,5 +45,5 @@ The training code `training.py` shows a demo of the training process in TensorFl
     
 <a name='Files'>
 ## Files Overview
-* 
+* [`layerConstructor.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/layerConstructor.py) provides higher level functions to easily build basic convolution, pooling, and fully connection layers.
 
