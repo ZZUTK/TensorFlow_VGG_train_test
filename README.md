@@ -26,14 +26,13 @@ Restoring VGG16 model parameters ...
 
 Classification Result:
 	Category Name: weasel 
-	Probability: 93.14%
-
-	Category Name: mink 
-	Probability: 4.04%
+	Probability: 88.05%
 
 	Category Name: polecat, fitch, foulmart, foumart, Mustela putorius 
-	Probability: 2.76%
+	Probability: 6.82%
 
+	Category Name: mink 
+	Probability: 4.79%
 ```
 
 <a name='Training'>
