@@ -15,7 +15,7 @@ Implementation of training and testing process of VGG16 and VGG19 in TensorFlow
 
 <a name='EasyRun'>
 ## Easy Run Testing
-The testing code `testing.py` test on a image of [weasel](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/laska.png) using the pre-traind VGG16 model parameters provided by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/). We saved the model parameters as a tensorflow readable file [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0). 
+The testing code [`testing.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/testing.py) test on a image of [weasel](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/laska.png) using the pre-traind VGG16 model parameters provided by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/). We saved the model parameters as a tensorflow readable file [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0). 
 Download the [parameter file](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0) to the same folder and run `testing.py`.
 
     $ python testing.py
@@ -38,7 +38,7 @@ Probability: 4.79%
 
 <a name='Training'>
 ## Training on CIFAR-10 dataset (in debugging)
-The training code `training.py` shows a demo of the training process in TensorFlow. Download the [CIFAR-10 dataset](https://www.dropbox.com/s/3ez7b00be8leqe6/CIFAR-10.dataset.npz?dl=0) to the same folder and run `training.py`
+The training code [`training.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/training.py) shows a demo of the training process in TensorFlow. Download the [CIFAR-10 dataset](https://www.dropbox.com/s/3ez7b00be8leqe6/CIFAR-10.dataset.npz?dl=0) to the same folder and run `training.py`
     
     $ python training.py
     
