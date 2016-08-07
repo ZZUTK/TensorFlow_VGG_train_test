@@ -15,6 +15,7 @@ def vgg16(input_maps, num_classes=1000):
 
     output1_1, kernel1_1, bias1_1 = lc.convolution_layer('conv1_1', input_maps, 64)
     parameters += [kernel1_1, bias1_1]
+    # output1_1 = tf.nn.dropout(output1_1, keep_prob=1.0)
 
     output1_2, kernel1_2, bias1_2 = lc.convolution_layer('conv1_2', output1_1, 64)
     parameters += [kernel1_2, bias1_2]
