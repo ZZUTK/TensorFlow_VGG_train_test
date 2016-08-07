@@ -10,9 +10,6 @@ import tensorflow as tf
 
 def vgg19(input_maps):
     parameters = []
-    # zero mean of input
-    mean = tf.constant([103.939, 116.779, 123.68], dtype=tf.float32, shape=[1, 1, 1, 3])
-    input_maps = input_maps - mean
 
     # assume the input image shape is 224 x 224 x 3
 
