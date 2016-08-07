@@ -15,7 +15,7 @@ import numpy as np
 # train_y is a 2-D matrix [num_images, num_classes] (using one-hot labels)
 # valid_x is a 4-D matrix like train_x
 # valid_y is a 2-D matrix like train_y
-def training(train_x, train_y, valid_x=None, valid_y=None,
+def training(train_x, train_y, valid_x=None, valid_y=None, format_size=[224, 224],
              batch_size=10, learn_rate=0.01, num_epochs=1, save_model=False):
     
     assert len(train_x.shape) == 4
@@ -27,9 +27,10 @@ def training(train_x, train_y, valid_x=None, valid_y=None,
     with graph.as_default():
         # build graph
         train_maps_raw = tf.placeholder(tf.float32, [batch_size, img_height, img_width, num_channels])
-        train_maps = tf.image.resize_images(train_maps_raw, 224, 224)
-        train_labels = tf.placeholder(tf.int32, [batch_size, num_classes])
-        logits, parameters = vgg16(train_maps)
+        train_maps = tf.image.resize_images(train_maps_raw, format_size[0], format_size[1])
+        train_labels = tf.placeholder(tf.float32, [batch_size, num_classes])
+        #print train_maps.get_shape()
+        logits, parameters = vgg16(train_maps, num_classes)
         # loss function
         cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits, train_labels)
         loss = tf.reduce_mean(cross_entropy)
@@ -40,10 +41,10 @@ def training(train_x, train_y, valid_x=None, valid_y=None,
         # prediction for the validation data
         if valid_x is not None:
             valid_maps_raw = tf.constant(valid_x)
-            valid_maps = tf.image.resize_images(valid_maps_raw, 224, 224)
-            valid_logits, _ = vgg16(valid_maps)
+            valid_maps = tf.image.resize_images(valid_maps_raw, format_size[0], format_size[1])
+            valid_logits, _ = vgg16(valid_maps, num_classes)
             valid_prediction = tf.nn.softmax(valid_logits)
-
+    
     # train the graph
     with tf.Session(graph=graph) as session:
         # saver to save the trained model
@@ -55,10 +56,10 @@ def training(train_x, train_y, valid_x=None, valid_y=None,
                 offset = (step * batch_size) % (num_images - batch_size)
                 batch_data = train_x[offset:(offset + batch_size), :, :, :]
                 batch_labels = train_y[offset:(offset + batch_size), :]
-                feed_dict = {train_maps: batch_data, train_labels: batch_labels}
-                _, l, predictions, _ = session.run(
-                    [optimizer, loss, train_prediction, parameters], feed_dict=feed_dict)
+                feed_dict = {train_maps_raw: batch_data, train_labels: batch_labels}
+                _, l, predictions = session.run([optimizer, loss, train_prediction], feed_dict=feed_dict)
                 if step % int(np.ceil(num_steps/20.0)) == 0:
+                    #predictions = predictions[0]
                     print('Batch loss at step %d: %.2f' % (step, l))
                     print('Batch accuracy: %.2f%%' % accuracy(predictions, batch_labels))
                     if valid_x is not None:
@@ -86,13 +87,13 @@ if __name__ == '__main__':
     te_y = data['test_y']
     Labels = data['labels']
 
-    # centralize images
+    # centralize images [num_images, img_height, img_width, num_channels]
     mu = np.mean(tr_x, axis=(0, 1, 2))
     print('Color center of images: %s' % mu )
     tr_x[:, :, :, :] -= mu.reshape(1, 1, 1, 3)
     te_x[:, :, :, :] -= mu.reshape(1, 1, 1, 3)
 
-    # one-hot labels
+    # one-hot labels [num_images, num_classes]
     tr_y_onehot = np.zeros([len(tr_y), len(Labels)])
     te_y_onehot = np.zeros([len(te_y), len(Labels)])
     for i in range(0, len(Labels)):
@@ -101,4 +102,4 @@ if __name__ == '__main__':
 
     # training
     print('Training ...')
-    training(tr_x, tr_y_onehot, te_x, te_y)
+    training(tr_x, tr_y_onehot, te_x, te_y_onehot, format_size=[64, 64])
