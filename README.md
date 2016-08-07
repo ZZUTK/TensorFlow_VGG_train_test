@@ -1,12 +1,12 @@
 # TensorFlow_VGG_train_test
 Implementation of training and testing process of VGG16 and VGG19 in TensorFlow
 
-* [Pre-requisites](#Pre_requisites)
+* [Pre-requisites](#Prerequisites)
 * [Easy Run Testing](#EasyRun)
 * [Training on CIFAR-10 dataset](#Training)
 * [Files Overview](#Files)
 
-<a name='Pre-requisites'>
+<a name='Prerequisites'>
 ## Pre-requisites
 * TensorFlow
 * Python 2.7.x 
