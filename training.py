@@ -29,7 +29,6 @@ def training(train_x, train_y, valid_x=None, valid_y=None, format_size=[224, 224
         train_maps_raw = tf.placeholder(tf.float32, [batch_size, img_height, img_width, num_channels])
         train_maps = tf.image.resize_images(train_maps_raw, format_size[0], format_size[1])
         train_labels = tf.placeholder(tf.float32, [batch_size, num_classes])
-        #print train_maps.get_shape()
         logits, parameters = vgg16(train_maps, num_classes)
         # loss function
         cross_entropy = tf.nn.softmax_cross_entropy_with_logits(logits, train_labels)
@@ -59,7 +58,6 @@ def training(train_x, train_y, valid_x=None, valid_y=None, format_size=[224, 224
                 feed_dict = {train_maps_raw: batch_data, train_labels: batch_labels}
                 _, l, predictions = session.run([optimizer, loss, train_prediction], feed_dict=feed_dict)
                 if step % int(np.ceil(num_steps/20.0)) == 0:
-                    #predictions = predictions[0]
                     print('Batch loss at step %d: %.2f' % (step, l))
                     print('Batch accuracy: %.2f%%' % accuracy(predictions, batch_labels))
                     if valid_x is not None:
