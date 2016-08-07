@@ -30,7 +30,7 @@ Probability: 4.79%
 ```
 
 ## Training on CIFAR-10 data
-The training code `training.py` shows a demo of the training process in TensorFlow. Simply run `training.py`
+The training code `training.py` shows a demo of the training process in TensorFlow.
     
     $ python training.py
 
