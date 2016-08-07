@@ -4,7 +4,7 @@ Implementation of training and testing process of VGG16 and VGG19 in TensorFlow
 * [Pre-requisites](#Pre_requisites)
 * [Easy Run Testing](#EasyRun)
 * [Training on CIFAR-10 dataset](#Training)
-* [Files](#Files)
+* [Files Overview](#Files)
 
 <a name='Pre-requisites'>
 ## Pre-requisites
@@ -44,6 +44,6 @@ The training code `training.py` shows a demo of the training process in TensorFl
     
     
 <a name='Files'>
-## Files
+## Files Overview
 * 
 
