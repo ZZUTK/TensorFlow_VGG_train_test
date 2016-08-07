@@ -17,6 +17,9 @@ import tensorflow as tf
 graph = tf.Graph()
 with graph.as_default():
     input_maps = tf.placeholder(tf.float32, [None, 224, 224, 3])
+    # zero mean of input
+    mean = tf.constant([103.939, 116.779, 123.68], dtype=tf.float32, shape=[1, 1, 1, 3])
+    input_maps = input_maps - mean
     output, parameters = vgg16(input_maps)
     softmax = tf.nn.softmax(output)
     # Finds values and indices of the k largest entries
@@ -39,5 +42,5 @@ with tf.Session(graph=graph) as sess:
     ind = ind[0]
     print('\nClassification Result:')
     for i in range(k):
-        print('Category Name: %s \nProbability: %.2f%%\n' % (class_names[ind[i]], prob[i]*100))
+        print('\tCategory Name: %s \n\tProbability: %.2f%%\n' % (class_names[ind[i]], prob[i]*100))
     sess.close()

@@ -8,11 +8,8 @@ import layerConstructor as lc
 import tensorflow as tf
 
 
-def vgg16(input_maps):
+def vgg16(input_maps, num_classes=1000):
     parameters = []
-    # zero mean of input
-    mean = tf.constant([103.939, 116.779, 123.68], dtype=tf.float32, shape=[1, 1, 1, 3])
-    input_maps = input_maps - mean
 
     # assume the input image shape is 224 x 224 x 3
 
@@ -72,7 +69,7 @@ def vgg16(input_maps):
     parameters += [kernel5_3, bias5_3]
 
     output5_4 = lc.max_pooling_layer('pool5', output5_3)
-
+    
     # output5_4 shape 7 x 7 x 512
 
     output6_1, kernel6_1, bias6_1 = lc.fully_connection_layer('fc6_1', output5_4, 4096)
@@ -85,10 +82,10 @@ def vgg16(input_maps):
 
     # output6_2 shape 1 x 4096
 
-    output6_3, kernel6_3, bias6_3 = lc.fully_connection_layer('fc6_3', output6_2, 1000)
+    output6_3, kernel6_3, bias6_3 = lc.fully_connection_layer('fc6_3', output6_2, num_classes)
     parameters += [kernel6_3, bias6_3]
 
-    # output6_3 shape 1 x 1000
+    # output6_3 shape 1 x num_classes
 
     return output6_3, parameters
 
