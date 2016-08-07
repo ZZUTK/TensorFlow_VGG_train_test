@@ -46,4 +46,5 @@ The training code `training.py` shows a demo of the training process in TensorFl
 <a name='Files'>
 ## Files Overview
 * [`layerConstructor.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/layerConstructor.py) provides higher level functions to build basic convolution, pooling, and fully connection layers.
+* [`VGG16_model.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/VGG16_model.py) and [`VGG19_model.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/VGG19_model.py) build the VGG16 and VGG19 model, respectively, using `layerConstructor.py`
 
