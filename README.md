@@ -46,7 +46,7 @@ The training code [`training.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_
 <a name='Files'>
 ## Files Overview
 * [`layerConstructor.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/layerConstructor.py) provides higher level functions to build basic convolution, pooling, and fully connection layers.
-* [`VGG16_model.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/VGG16_model.py) and [`VGG19_model.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/VGG19_model.py) build the VGG16 and VGG19 model, respectively, using `layerConstructor.py`
+* [`VGG16_model.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/VGG16_model.py) and [`VGG19_model.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/VGG19_model.py) build the VGG16 and VGG19 model, respectively, using [`layerConstructor.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/layerConstructor.py)
 * [`imagenet_classes.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/imagenet_classes.py) stores the class names of the ImageNet dataset, cited from [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/)
 * [`weasel.png`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/weasel.png) is an example image for testing
 * [`training.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/training.py) and [`testing.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/testing.py) are demos of traing and testing
