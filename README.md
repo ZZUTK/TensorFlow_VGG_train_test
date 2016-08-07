@@ -37,7 +37,7 @@ Probability: 4.79%
 ```
 
 <a name='Training'>
-## Training on CIFAR-10 dataset
+## Training on CIFAR-10 dataset (in debugging)
 The training code `training.py` shows a demo of the training process in TensorFlow. Download the [CIFAR-10 dataset](https://www.dropbox.com/s/3ez7b00be8leqe6/CIFAR-10.dataset.npz?dl=0) to the same folder and run `training.py`
     
     $ python training.py
