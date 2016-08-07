@@ -8,14 +8,15 @@ import layerConstructor as lc
 import tensorflow as tf
 
 
-def vgg16(input_maps, num_classes=1000):
+def vgg16(input_maps, num_classes=1000, isTrain=False):
     parameters = []
 
     # assume the input image shape is 224 x 224 x 3
 
     output1_1, kernel1_1, bias1_1 = lc.convolution_layer('conv1_1', input_maps, 64)
     parameters += [kernel1_1, bias1_1]
-    # output1_1 = tf.nn.dropout(output1_1, keep_prob=1.0)
+    #if isTrain: 
+    #    output1_1 = tf.nn.dropout(output1_1, keep_prob=.8)
 
     output1_2, kernel1_2, bias1_2 = lc.convolution_layer('conv1_2', output1_1, 64)
     parameters += [kernel1_2, bias1_2]
