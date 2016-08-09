@@ -19,7 +19,7 @@ with graph.as_default():
     input_maps = tf.placeholder(tf.float32, [None, 224, 224, 3])
     # zero mean of input
     mean = tf.constant([103.939, 116.779, 123.68], dtype=tf.float32, shape=[1, 1, 1, 3])
-    output, parameters = vgg16(input_maps - mean)
+    output = vgg16(input_maps - mean)
     softmax = tf.nn.softmax(output)
     # Finds values and indices of the k largest entries
     k = 3
