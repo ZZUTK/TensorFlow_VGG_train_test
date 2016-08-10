@@ -41,6 +41,7 @@ The training code [`training.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_
     
     $ python training.py
     
+The print information during traing will be like the follow. Of course, the results may vary with the initalization. Only 10 epoch is set in the demo to get a quick result, so the accuracy is not good enough. However, it roughly shows the trend of lower loss and higher accuracy as more epoch.
 ```
 Loading dataset ...
 Color center of images: [ 0.59276742  0.57485735  0.44807526]
