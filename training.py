@@ -120,4 +120,5 @@ if __name__ == '__main__':
     print('Training ...')
     training(tr_x[::10, :, :, :], tr_y_onehot[::10, :],
              te_x[::10, :, :, :], te_y_onehot[::10, :],
-             format_size=[32, 32], batch_size=50, learn_rate=0.1, num_epochs=80)
+             format_size=[32, 32], batch_size=50, learn_rate=0.1, num_epochs=10)
+
