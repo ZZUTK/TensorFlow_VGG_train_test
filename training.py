@@ -8,8 +8,6 @@
 # (2 convolution + 1 fully connection), which is also named vgg16. but it is NOT VGG16 model.
 #####################################################################################################
 
-from shallow_model import vgg16
-# from VGG16_model import vgg16
 import tensorflow as tf
 import numpy as np
 
@@ -118,7 +116,17 @@ if __name__ == '__main__':
 
     # training on a subset to get a quick result
     print('Training ...')
-    training(tr_x[::10, :, :, :], tr_y_onehot[::10, :],
-             te_x[::10, :, :, :], te_y_onehot[::10, :],
-             format_size=[32, 32], batch_size=50, learn_rate=0.1, num_epochs=10)
+    DEMO_PLAY = True
+    if DEMO_PLAY:
+        from shallow_model import vgg16
+        training(tr_x[::10, :, :, :], tr_y_onehot[::10, :],
+                 te_x[::10, :, :, :], te_y_onehot[::10, :],
+                 format_size=[32, 32], batch_size=50, learn_rate=0.1, num_epochs=10)
+    else:
+        from VGG16_model import vgg16
+        training(tr_x[::100, :, :, :], tr_y_onehot[::100, :],
+                 te_x[::100, :, :, :], te_y_onehot[::100, :],
+                 format_size=[64, 64], batch_size=10, learn_rate=1e-3, num_epochs=5)
+
+
 
