@@ -42,7 +42,42 @@ The training code [`training.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_
     $ python training.py
     
 ```
-
+Loading dataset ...
+Color center of images: [ 0.59276742  0.57485735  0.44807526]
+Training ...
+.
+.
+.
+Epoch  1/10:
+	Train Loss = 2.33	 Accuracy = 18.00%
+	Valid Loss = 2.13	 Accuracy = 25.00%
+Epoch  2/10:
+	Train Loss = 2.08	 Accuracy = 20.00%
+	Valid Loss = 1.95	 Accuracy = 33.30%
+Epoch  3/10:
+	Train Loss = 1.99	 Accuracy = 26.00%
+	Valid Loss = 1.85	 Accuracy = 34.70%
+Epoch  4/10:
+	Train Loss = 1.80	 Accuracy = 40.00%
+	Valid Loss = 1.79	 Accuracy = 37.20%
+Epoch  5/10:
+	Train Loss = 1.47	 Accuracy = 44.00%
+	Valid Loss = 1.66	 Accuracy = 41.10%
+Epoch  6/10:
+	Train Loss = 1.25	 Accuracy = 54.00%
+	Valid Loss = 1.61	 Accuracy = 43.60%
+Epoch  7/10:
+	Train Loss = 1.24	 Accuracy = 60.00%
+	Valid Loss = 1.68	 Accuracy = 43.20%
+Epoch  8/10:
+	Train Loss = 1.06	 Accuracy = 64.00%
+	Valid Loss = 1.62	 Accuracy = 46.00%
+Epoch  9/10:
+	Train Loss = 0.98	 Accuracy = 72.00%
+	Valid Loss = 1.55	 Accuracy = 47.00%
+Epoch 10/10:
+	Train Loss = 0.90	 Accuracy = 76.00%
+	Valid Loss = 1.60	 Accuracy = 45.40%
 ```
 
 
