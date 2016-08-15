@@ -8,7 +8,7 @@ import layerConstructor as lc
 import tensorflow as tf
 
 
-def vgg16(input_maps, num_classes=1000, isTrain=False, keep_prob=1.0):
+def vgg16(input_maps, num_classes=1000, isTrain=False, keep_prob=1.0, return_all=False):
 
     # assume the input image shape is 224 x 224 x 3
 
@@ -53,4 +53,23 @@ def vgg16(input_maps, num_classes=1000, isTrain=False, keep_prob=1.0):
     output6_2, kernel6_2, bias6_2 = lc.fully_connection_layer('fc6_2', output6_1, 4096)
     output6_3, kernel6_3, bias6_3 = lc.fully_connection_layer('fc6_3', output6_2, num_classes)
 
-    return output6_3
+    if return_all:
+        return output1_1, kernel1_1, bias1_1,\
+               output1_2, kernel1_2, bias1_2,\
+               output2_1, kernel2_1, bias2_1,\
+               output2_2, kernel2_2, bias2_2,\
+               output3_1, kernel3_1, bias3_1,\
+               output3_2, kernel3_2, bias3_2,\
+               output3_3, kernel3_3, bias3_3,\
+               output4_1, kernel4_1, bias4_1,\
+               output4_2, kernel4_2, bias4_2,\
+               output4_3, kernel4_3, bias4_3,\
+               output5_1, kernel5_1, bias5_1,\
+               output5_2, kernel5_2, bias5_2,\
+               output5_3, kernel5_3, bias5_3,\
+               output6_1, kernel6_1, bias6_1,\
+               output6_2, kernel6_2, bias6_2,\
+               output6_3, kernel6_3, bias6_3
+
+    else:
+        return output6_3

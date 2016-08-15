@@ -19,8 +19,8 @@ with graph.as_default():
     input_maps = tf.placeholder(tf.float32, [None, 224, 224, 3])
     # zero mean of input
     mean = tf.constant([103.939, 116.779, 123.68], dtype=tf.float32, shape=[1, 1, 1, 3])
-    output = vgg16(input_maps - mean)
-    softmax = tf.nn.softmax(output)
+    output = vgg16(input_maps - mean, return_all=True)
+    softmax = tf.nn.softmax(output[-3])
     # Finds values and indices of the k largest entries
     k = 3
     values, indices = tf.nn.top_k(softmax, k)
@@ -36,7 +36,7 @@ with tf.Session(graph=graph) as sess:
     print('Restoring VGG16 model parameters ...')
     saver.restore(sess, 'VGG16_modelParams.tensorflow')
     # testing on the sample image
-    [prob, ind] = sess.run([values, indices], feed_dict={input_maps: [img]})
+    [prob, ind, out] = sess.run([values, indices, output], feed_dict={input_maps: [img]})
     prob = prob[0]
     ind = ind[0]
     print('\nClassification Result:')
