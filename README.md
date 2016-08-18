@@ -6,9 +6,6 @@ Implementation of training and testing process of VGG16 in TensorFlow
 * [Training on CIFAR-10 dataset](#Training)
 * [Files Overview](#Files)
 
-![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide2.PNG)
-![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide3.PNG)
-
 <a name='Prerequisites'>
 ## Pre-requisites
 * TensorFlow
@@ -37,6 +34,8 @@ Classification Result:
 	Category Name: mink 
 	Probability: 4.79%
 ```
+![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide2.PNG)
+![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide3.PNG)
 
 <a name='Training'>
 ## Training on CIFAR-10 dataset (in debugging)
