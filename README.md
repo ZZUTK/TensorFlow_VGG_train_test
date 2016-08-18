@@ -8,6 +8,7 @@ Implementation of training and testing process of VGG16 in TensorFlow
 
 ![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide2.PNG)
 ![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide3.PNG)
+![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide4.PNG)
 
 <a name='Prerequisites'>
 ## Pre-requisites
