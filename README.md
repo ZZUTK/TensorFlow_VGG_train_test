@@ -6,6 +6,9 @@ Implementation of training and testing process of VGG16 in TensorFlow
 * [Training on CIFAR-10 dataset](#Training)
 * [Files Overview](#Files)
 
+![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide2.PNG)
+
+
 <a name='Prerequisites'>
 ## Pre-requisites
 * TensorFlow
