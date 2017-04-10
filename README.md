@@ -7,6 +7,7 @@ Implementation of training and testing process of VGG16 in TensorFlow
 * [Files Overview](#Files)
 
 <a name='Prerequisites'>
+
 ## Pre-requisites
 * TensorFlow
 * Python 2.7.x 
