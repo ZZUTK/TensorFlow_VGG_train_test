@@ -15,8 +15,9 @@ Implementation of training and testing process of VGG16 in TensorFlow
 * Training dataset [CIFAR-10 dataset](https://www.dropbox.com/s/3ez7b00be8leqe6/CIFAR-10.dataset.npz?dl=0)
 
 <a name='EasyRun'>
+
 ## Easy Run Testing
-The testing code [`testing.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/testing.py) test on a image of [weasel](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/laska.png) using the pre-traind VGG16 model parameters provided by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/). We saved the model parameters as a tensorflow readable file [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0). 
+The testing code [`testing.py`](testing.py) test on a image of [weasel](laska.png) using the pre-traind VGG16 model parameters provided by [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/). We saved the model parameters as a tensorflow readable file [`VGG16_modelParams.tensorflow`](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0). 
 Download the [parameter file](https://www.dropbox.com/s/9ii6whoj3q3o0cg/VGG16_modelParams.tensorflow?dl=0) to the same folder and run
 
     $ python testing.py
@@ -35,12 +36,13 @@ Classification Result:
 	Category Name: mink 
 	Probability: 4.79%
 ```
-![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide2.PNG)
-![Demo show](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/images/Slide3.PNG)
+![Demo show](images/Slide2.PNG)
+![Demo show](images/Slide3.PNG)
 
 <a name='Training'>
+
 ## Training on CIFAR-10 dataset (in debugging)
-The training code [`training.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/training.py) shows a demo of the training process in TensorFlow. Download the [CIFAR-10 dataset](https://www.dropbox.com/s/3ez7b00be8leqe6/CIFAR-10.dataset.npz?dl=0) to the same folder and run
+The training code [`training.py`](training.py) shows a demo of the training process in TensorFlow. Download the [CIFAR-10 dataset](https://www.dropbox.com/s/3ez7b00be8leqe6/CIFAR-10.dataset.npz?dl=0) to the same folder and run
     
     $ python training.py
     
@@ -87,10 +89,11 @@ Epoch 10/10:
 
     
 <a name='Files'>
+
 ## Files Overview
-* [`layerConstructor.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/layerConstructor.py) provides higher level functions to build basic convolution, pooling, and fully connection layers.
-* [`VGG16_model.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/VGG16_model.py) build the VGG16 model, respectively, using [`layerConstructor.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/layerConstructor.py)
-* [`imagenet_classes.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/imagenet_classes.py) stores the class names of the ImageNet dataset, cited from [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/)
-* [`weasel.png`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/weasel.png) is an example image for testing
-* [`training.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/training.py) and [`testing.py`](https://github.com/ZZUTK/TensorFlow_VGG_train_test/blob/master/testing.py) are demos of traing and testing
+* [`layerConstructor.py`](layerConstructor.py) provides higher level functions to build basic convolution, pooling, and fully connection layers.
+* [`VGG16_model.py`](VGG16_model.py) build the VGG16 model, respectively, using [`layerConstructor.py`](layerConstructor.py)
+* [`imagenet_classes.py`](imagenet_classes.py) stores the class names of the ImageNet dataset, cited from [Davi Frossard](http://www.cs.toronto.edu/~frossard/post/vgg16/)
+* [`weasel.png`](weasel.png) is an example image for testing
+* [`training.py`](training.py) and [`testing.py`](testing.py) are demos of traing and testing
 
